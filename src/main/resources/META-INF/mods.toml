@@ -1,0 +1,29 @@
+modLoader="javafml"
+
+loaderVersion="[43,)"
+
+license="All rights reserved"
+
+[[mods]]
+modId="skybot"
+version="${file.jarVersion}"
+displayName="SkyBot Server Connection"
+# The description text for the mod (multi line!) (#mandatory)
+description='''
+A mod that connects SkyBot to a server's chat system.
+'''
+[[dependencies.skybot]]
+    modId="forge"
+    mandatory=true
+    versionRange="[43,)"
+    ordering="NONE"
+    side="BOTH"
+
+# Here's another dependency
+[[dependencies.skybot]]
+    modId="minecraft"
+    mandatory=true
+# This version range declares a minimum of the current minecraft version up to but not including the next major version
+    versionRange="[1.19.2,1.20)"
+    ordering="NONE"
+    side="BOTH"
