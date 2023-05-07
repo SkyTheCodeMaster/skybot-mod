@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcfaa61c-1e9c-4de6-b9e4-f8a3050dc8f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/WSServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skybot-mod.iml" beforeDir="false" afterPath="$PROJECT_DIR$/skybot-mod.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/SkyBotMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/SkyBotMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/WSServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/WSServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1683422411026</updated>
       <workItem from="1683422412417" duration="4173000" />
-      <workItem from="1683428210942" duration="1840000" />
+      <workItem from="1683428210942" duration="8642000" />
     </task>
     <servers />
   </component>

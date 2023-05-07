@@ -36,11 +36,15 @@ public class WSServer extends WebSocketServer {
   @Override
   public void onMessage(WebSocket conn, String message) {
     LOGGER.info("Received message from "	+ conn.getRemoteSocketAddress() + ": " + message);
+    // echo
+    conn.send(message);
   }
   
   @Override
   public void onMessage(WebSocket conn, ByteBuffer message) {
     LOGGER.info("Received ByteBuffer from "	+ conn.getRemoteSocketAddress());
+    // echo
+    conn.send(message);
   }
   
   @Override

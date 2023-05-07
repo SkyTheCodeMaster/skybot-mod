@@ -6,7 +6,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import com.mojang.logging.LogUtils;
 import org.slf4j.Logger;
-import com.skythecodemaster.skybot.WSServer;
 
 import java.net.InetSocketAddress;
 
@@ -31,7 +30,7 @@ public class SkyBotMod {
     int port = 20500;
     
     WSServer server = new WSServer(new InetSocketAddress(host,port));
-    LOGGER.info("Running server on " + host + ":" + port);
+    LOGGER.info("Running server on ws://" + host + ":" + port);
     server.run();
   }
 }
