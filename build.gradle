@@ -1,4 +1,5 @@
 plugins {
+    id 'java'
     id 'eclipse'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '5.1.+'
@@ -90,19 +91,40 @@ minecraft {
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
-repositories {}
+repositories {
+    mavenCentral()
+}
 
 configurations {
+ //   shade { transitive = false }
+ //   implementation.extendsFrom shade
 }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.6'
-    implementation 'org.java-websocket:Java-WebSocket:1.5.3'
+    implementation group: 'org.java-websocket', name: 'Java-Websocket', version: '1.5.3'
+    //implementation fg.deobf 'org.java-websocket:Java-WebSocket:1.5.3'
+}
+
+shadowJar {
+    baseName = 'skybot'
+    version = '1.0.0'
+//    dependencies {
+//        include(('org.java-websocket:Java-WebSocket:1.5.3'))
+//        include(('net.minecraftforge:forge:1.19.2-43.2.6'))
+//    }
+    manifest {
+        attributes 'Main-Class': 'com.skythecodemaster.skybot'
+    }
+    configurations = [project.configurations.compileClasspath]
 }
 
 jar {
+    //from configurations.runtimeClasspath.filter { it.name.endsWith('jar') }.collect { zipTree(it) }
+    //duplicatesStrategy = DuplicatesStrategy.INCLUDE
     manifest {
         attributes([
+                "Main-Class"              : "com.skythecodemaster.skybot",
                 "Specification-Title"     : "skybotmod",
                 "Specification-Vendor"    : "skythecodemaster",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
