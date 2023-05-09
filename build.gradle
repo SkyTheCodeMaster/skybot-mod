@@ -102,17 +102,17 @@ configurations {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.6'
-    implementation group: 'org.java-websocket', name: 'Java-Websocket', version: '1.5.3'
+    implementation group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.4.1'
     //implementation fg.deobf 'org.java-websocket:Java-WebSocket:1.5.3'
 }
 
 shadowJar {
     baseName = 'skybot'
     version = '1.0.0'
-//    dependencies {
-//        include(('org.java-websocket:Java-WebSocket:1.5.3'))
+    dependencies {
+        include(('org.java-websocket:Java-WebSocket:1.4.1'))
 //        include(('net.minecraftforge:forge:1.19.2-43.2.6'))
-//    }
+    }
     manifest {
         attributes 'Main-Class': 'com.skythecodemaster.skybot'
     }
@@ -120,8 +120,12 @@ shadowJar {
 }
 
 jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    //from {
+    //    configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    //}
     //from configurations.runtimeClasspath.filter { it.name.endsWith('jar') }.collect { zipTree(it) }
-    //duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    //duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     manifest {
         attributes([
                 "Main-Class"              : "com.skythecodemaster.skybot",
@@ -136,6 +140,7 @@ jar {
     }
 }
 
+shadowJar.finalizedBy(reobfShadowJar)
 jar.finalizedBy('reobfJar')
 
 publishing {
