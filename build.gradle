@@ -102,7 +102,7 @@ configurations {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.6'
-    implementation group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.4.1'
+    implementation group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.5.3'
     //implementation fg.deobf 'org.java-websocket:Java-WebSocket:1.5.3'
 }
 
@@ -110,7 +110,7 @@ shadowJar {
     baseName = 'skybot'
     version = '1.0.0'
     dependencies {
-        include(('org.java-websocket:Java-WebSocket:1.4.1'))
+        include(('org.java-websocket:Java-WebSocket:1.5.3'))
 //        include(('net.minecraftforge:forge:1.19.2-43.2.6'))
     }
     manifest {
@@ -142,7 +142,7 @@ jar {
 
 
 reobf { shadowJar }
-shadowJar.finalizedBy(reobfShadowJar)
+shadowJar.finalizedBy('reobfShadowJar')
 jar.finalizedBy('reobfJar')
 
 publishing {
