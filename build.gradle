@@ -98,25 +98,18 @@ repositories {
 configurations {
  //   shade { transitive = false }
  //   implementation.extendsFrom shade
+    library
+    implementation.extendsFrom library
+
+    dataImplementation.extendsFrom implementation
 }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.6'
-    implementation group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.5.3'
+    library group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.5.3'
     //implementation fg.deobf 'org.java-websocket:Java-WebSocket:1.5.3'
-}
 
-shadowJar {
-    baseName = 'skybot'
-    version = '1.0.0'
-    dependencies {
-        include(('org.java-websocket:Java-WebSocket:1.5.3'))
-//        include(('net.minecraftforge:forge:1.19.2-43.2.6'))
-    }
-    manifest {
-        attributes 'Main-Class': 'com.skythecodemaster.skybot'
-    }
-    configurations = [project.configurations.compileClasspath]
+    dataImplementation sourceSets.main.output
 }
 
 jar {
@@ -138,12 +131,30 @@ jar {
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
+    finalizedBy("reobfJar")
 }
 
+reobf { shadowJar {} }
 
-reobf { shadowJar }
-shadowJar.finalizedBy('reobfShadowJar')
-jar.finalizedBy('reobfJar')
+shadowJar {
+    baseName = 'skybot'
+    version = '1.0.0'
+    dependencies {
+        include(('org.java-websocket:Java-WebSocket:1.5.3'))
+//        include(('net.minecraftforge:forge:1.19.2-43.2.6'))
+    }
+    manifest {
+        attributes 'Main-Class': 'com.skythecodemaster.skybot'
+    }
+    configurations = [project.configurations.compileClasspath]
+    finalizedBy("reobfShadowJar")
+}
+
+tasks.named('reobfShadowJar') { dependsOn tasks.named('jar') }
+tasks.named('shadowJar') { dependsOn 'reobfJar' }
+
+//shadowJar.finalizedBy('reobfShadowJar')
+//jar.finalizedBy('reobfJar')
 
 publishing {
     publications {
