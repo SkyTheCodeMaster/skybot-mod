@@ -1,5 +1,6 @@
 package com.skythecodemaster.skybot;
 
+import com.skythecodemaster.skybot.utils.TickTimes;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.server.ServerLifecycleHooks;

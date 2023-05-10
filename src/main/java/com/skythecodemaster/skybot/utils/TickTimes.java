@@ -1,4 +1,4 @@
-package com.skythecodemaster.skybot;
+package com.skythecodemaster.skybot.utils;
 
 public class TickTimes {
   private double mspt;
