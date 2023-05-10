@@ -2,6 +2,7 @@ package com.skythecodemaster.skybot;
 
 // Minecraft logging stuff
 import com.mojang.logging.LogUtils;
+import net.minecraft.server.MinecraftServer;
 import org.slf4j.Logger;
 
 // Websocket server
@@ -15,11 +16,16 @@ import org.java_websocket.server.WebSocketServer;
 public class WSServer extends WebSocketServer {
   
   private static final Logger LOGGER = LogUtils.getLogger();
+  private MinecraftServer server;
   
   public WSServer(InetSocketAddress address) {
     super(address);
     
     LOGGER.info("WS Server instantiated...");
+  }
+  
+  public void setServer(MinecraftServer server) {
+    this.server = server;
   }
   
   @Override

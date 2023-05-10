@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcfaa61c-1e9c-4de6-b9e4-f8a3050dc8f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/ServerData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/ServerUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/TickTimes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/BasePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/ChatPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/CommandPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/InfoPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/Packet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/ResponsePacket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/WSServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/WSServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1821,6 +1830,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -1835,16 +1851,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/media/sky/CORSAIR/Not School/github/skybot-mod",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/media/sky/CORSAIR/Not School/github/skybot-mod&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.runClient" />
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -1867,6 +1883,8 @@
       <workItem from="1683642335384" duration="793000" />
       <workItem from="1683643624551" duration="7330000" />
       <workItem from="1683720502099" duration="4117000" />
+      <workItem from="1683726880143" duration="8545000" />
+      <workItem from="1683738775420" duration="2467000" />
     </task>
     <servers />
   </component>
