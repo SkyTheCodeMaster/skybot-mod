@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcfaa61c-1e9c-4de6-b9e4-f8a3050dc8f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/obuild.ogradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
@@ -1867,7 +1866,7 @@
       <workItem from="1683641885525" duration="86000" />
       <workItem from="1683642335384" duration="793000" />
       <workItem from="1683643624551" duration="7330000" />
-      <workItem from="1683720502099" duration="2227000" />
+      <workItem from="1683720502099" duration="4117000" />
     </task>
     <servers />
   </component>

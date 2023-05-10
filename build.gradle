@@ -1,16 +1,8 @@
-import org.w3c.dom.NodeList
-
-import javax.xml.xpath.XPathConstants
-import javax.xml.xpath.XPathFactory
-
 plugins {
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '5.1.+'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
-    //id 'org.spongepowered.mixin' version '0.7.+'
     id 'com.github.johnrengelman.shadow' version '7.1.2'
-    //id 'org.cadixdev.licenser' version '0.6.1'
-    //id 'tk.sciwhiz12.gradle.simplversion' version '0.1.0'
 }
 
 sourceSets {
@@ -65,8 +57,8 @@ minecraft {
 }
 
 configurations {
-    compile.exclude module: "org.slf4j"
-    runtime.exclude module: "org.slf4j"
+    //compile.exclude module: "org.slf4j"
+    //runtime.exclude module: "org.slf4j"
 
     library
     implementation.extendsFrom library
@@ -80,7 +72,9 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:1.19.2-43.2.6"
 
-    library(group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.5.3') {}
+    library(group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.5.3') {
+        exclude module: 'slf4j-api'
+    }
 
     dataImplementation sourceSets.main.output
 }
@@ -91,10 +85,6 @@ java {
     toolchain.languageVersion = JavaLanguageVersion.of(17)
     withSourcesJar()
 }
-
-/*license {
-    header = project.file('HEADER.txt')
-}*/
 
 var manifestAttributes = [
         "Main-Class"              : "com.skythecodemaster.skybot",
