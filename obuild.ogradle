@@ -1,0 +1,174 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '5.1.+'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+
+version = '1.0'
+group = 'com.skythecodemaster.skybot' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'skybot'
+
+// Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
+minecraft {
+    mappings channel: 'parchment', version: '2022.08.14-1.19.2'
+
+    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
+
+    // Default run configurations.
+    // These can be tweaked, removed, or duplicated as needed.
+    runs {
+        client {
+            workingDirectory project.file('run')
+
+            property 'forge.logging.markers', 'REGISTRIES'
+
+            property 'forge.logging.console.level', 'debug'
+
+            property 'forge.enabledGameTestNamespaces', 'skybot'
+
+            mods {
+                skybot {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+
+            property 'forge.logging.markers', 'REGISTRIES'
+
+            property 'forge.logging.console.level', 'debug'
+
+            property 'forge.enabledGameTestNamespaces', 'skybot'
+
+            mods {
+                skybot {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        gameTestServer {
+            workingDirectory project.file('run')
+
+            property 'forge.logging.markers', 'REGISTRIES'
+
+            property 'forge.logging.console.level', 'debug'
+
+            property 'forge.enabledGameTestNamespaces', 'skybot'
+
+            mods {
+                skybot {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        data {
+            workingDirectory project.file('run')
+
+            property 'forge.logging.markers', 'REGISTRIES'
+
+            property 'forge.logging.console.level', 'debug'
+
+            args '--mod', 'skybot', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+
+            mods {
+                skybot {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+ //   shade { transitive = false }
+ //   implementation.extendsFrom shade
+    library
+    implementation.extendsFrom library
+
+    dataImplementation.extendsFrom implementation
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.19.2-43.2.6'
+    library group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.5.3'
+    //implementation fg.deobf 'org.java-websocket:Java-WebSocket:1.5.3'
+
+    dataImplementation sourceSets.main.output
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    //from {
+    //    configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    //}
+    //from configurations.runtimeClasspath.filter { it.name.endsWith('jar') }.collect { zipTree(it) }
+    //duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes([
+                "Main-Class"              : "com.skythecodemaster.skybot",
+                "Specification-Title"     : "skybotmod",
+                "Specification-Vendor"    : "skythecodemaster",
+                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : project.jar.archiveVersion,
+                "Implementation-Vendor"   : "skythecodemaster",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+    finalizedBy("reobfJar")
+}
+
+shadowJar {
+    baseName = 'skybot'
+    version = '1.0.0'
+    dependencies {
+        include(('org.java-websocket:Java-WebSocket:1.5.3'))
+//        include(('net.minecraftforge:forge:1.19.2-43.2.6'))
+    }
+    manifest {
+        attributes 'Main-Class': 'com.skythecodemaster.skybot'
+    }
+    configurations = [project.configurations.compileClasspath]
+    finalizedBy("reobfShadowJar")
+}
+
+reobf { shadowJar {} }
+
+tasks.named('reobfShadowJar') { dependsOn tasks.named('jar') }
+tasks.named('shadowJar') { dependsOn 'reobfJar' }
+
+//shadowJar.finalizedBy('reobfShadowJar')
+//jar.finalizedBy('reobfJar')
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url "file://${project.projectDir}/mcmodsrepo"
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
