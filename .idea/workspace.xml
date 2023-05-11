@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcfaa61c-1e9c-4de6-b9e4-f8a3050dc8f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/incoming/CommandPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/utils/CommandReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/ServerData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/ServerData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/ServerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/ServerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/TickTimes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/utils/TickTimes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/ChatPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/ChatPacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/WSServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/WSServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/ChatPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/incoming/ChatPacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/CommandPacket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/InfoPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/incoming/InfoPacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/ResponsePacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/packets/outgoing/ResponsePacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/utils/TickTimes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/utils/TickTimes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1867,7 +1872,8 @@
       <workItem from="1683726880143" duration="8545000" />
       <workItem from="1683738775420" duration="2650000" />
       <workItem from="1683748839964" duration="1589000" />
-      <workItem from="1683750608859" duration="2900000" />
+      <workItem from="1683750608859" duration="9015000" />
+      <workItem from="1683806734057" duration="4171000" />
     </task>
     <servers />
   </component>

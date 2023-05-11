@@ -2,6 +2,8 @@ package com.skythecodemaster.skybot;
 
 // Minecraft logging stuff
 import com.mojang.logging.LogUtils;
+import com.skythecodemaster.skybot.packets.BasePacket;
+import com.skythecodemaster.skybot.packets.outgoing.ResponsePacket;
 import net.minecraft.server.MinecraftServer;
 import org.slf4j.Logger;
 
@@ -16,7 +18,7 @@ import org.java_websocket.server.WebSocketServer;
 public class WSServer extends WebSocketServer {
   
   private static final Logger LOGGER = LogUtils.getLogger();
-  private MinecraftServer server;
+  private ServerUtils sUtils = new ServerUtils();
   
   public WSServer(InetSocketAddress address) {
     super(address);
@@ -24,26 +26,37 @@ public class WSServer extends WebSocketServer {
     LOGGER.info("WS Server instantiated...");
   }
   
-  public void setServer(MinecraftServer server) {
-    this.server = server;
+  private WebSocket conn;
+  
+  public WebSocket getConn() {
+    return this.conn;
   }
   
   @Override
   public void onOpen(WebSocket conn, ClientHandshake handshake) {
+    if (this.conn != null) {
+      conn.send("client already connected");
+      conn.close();
+    }
+    this.conn = conn;
     conn.send("hello"); // Later we will add information packets such as players, version, etc
     LOGGER.info("New client connected: " + conn.getRemoteSocketAddress());
   }
   
   @Override
   public void onClose(WebSocket conn, int code, String reason, boolean remote) {
+    this.conn = null;
     LOGGER.info("Client disconnected: " + conn.getRemoteSocketAddress() + " with exit code " + code + " additional info: " + reason);
   }
   
   @Override
   public void onMessage(WebSocket conn, String message) {
     LOGGER.info("Received message from "	+ conn.getRemoteSocketAddress() + ": " + message);
-    // echo
-    conn.send(message);
+    // Parse the json out to the base class
+    BasePacket packet = sUtils.parsePacket(message);
+    // Now execute based on the contents of the packet
+    ResponsePacket resp = sUtils.executePacket(packet);
+    
   }
   
   @Override

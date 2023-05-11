@@ -16,4 +16,11 @@ public class TickTimes {
   public double getMSPT() {
     return this.mspt;
   }
+  
+  public double[] toArray() {
+    double[] arr = new double[2];
+    arr[0] = this.tps;
+    arr[1] = this.mspt;
+    return arr;
+  }
 }

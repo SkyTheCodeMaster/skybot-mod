@@ -1,7 +1,7 @@
-package com.skythecodemaster.skybot.packets;
+package com.skythecodemaster.skybot.packets.outgoing;
 
 // This is a response packet
-public class ResponsePacket {
+public class ResponsePacket extends BasePacket {
   private String data;
   private String type; // Whether this is a response to an info/command packet, or just a chat packet.
   
