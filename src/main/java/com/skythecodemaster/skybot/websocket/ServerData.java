@@ -1,6 +1,6 @@
-package com.skythecodemaster.skybot;
+package com.skythecodemaster.skybot.websocket;
 
-import com.skythecodemaster.skybot.utils.TickTimes;
+import com.skythecodemaster.skybot.websocket.utils.TickTimes;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.server.ServerLifecycleHooks;

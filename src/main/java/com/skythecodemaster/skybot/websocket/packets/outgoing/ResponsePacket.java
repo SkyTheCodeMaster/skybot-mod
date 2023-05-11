@@ -1,4 +1,6 @@
-package com.skythecodemaster.skybot.packets.outgoing;
+package com.skythecodemaster.skybot.websocket.packets.outgoing;
+
+import com.skythecodemaster.skybot.websocket.packets.BasePacket;
 
 // This is a response packet
 public class ResponsePacket extends BasePacket {

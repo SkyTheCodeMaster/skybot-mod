@@ -1,10 +1,12 @@
-package com.skythecodemaster.skybot;
+package com.skythecodemaster.skybot.websocket;
 
 // Minecraft logging stuff
 import com.mojang.logging.LogUtils;
-import com.skythecodemaster.skybot.packets.BasePacket;
-import com.skythecodemaster.skybot.packets.outgoing.ResponsePacket;
-import net.minecraft.server.MinecraftServer;
+import com.skythecodemaster.skybot.websocket.packets.BasePacket;
+import com.skythecodemaster.skybot.websocket.packets.incoming.ChatPacket;
+import com.skythecodemaster.skybot.websocket.packets.incoming.CommandPacket;
+import com.skythecodemaster.skybot.websocket.packets.incoming.InfoPacket;
+import com.skythecodemaster.skybot.websocket.packets.outgoing.ResponsePacket;
 import org.slf4j.Logger;
 
 // Websocket server
@@ -54,8 +56,19 @@ public class WSServer extends WebSocketServer {
     LOGGER.info("Received message from "	+ conn.getRemoteSocketAddress() + ": " + message);
     // Parse the json out to the base class
     BasePacket packet = sUtils.parsePacket(message);
-    // Now execute based on the contents of the packet
-    ResponsePacket resp = sUtils.executePacket(packet);
+    // Now execute based on the contents of the
+    ResponsePacket resp = null;
+    if (packet instanceof ChatPacket) {
+      resp = sUtils.executeChatPacket((ChatPacket) packet);
+    } else if (packet instanceof InfoPacket) {
+      resp = sUtils.executeInfoPacket((InfoPacket) packet);
+    } else if (packet instanceof CommandPacket) {
+      resp = sUtils.executeCommandPacket((CommandPacket) packet);
+    }
+    
+    // JSONify the response
+    String json_resp = sUtils.jsonifyResponse(resp);
+    // Send it down the websocket
     
   }
   

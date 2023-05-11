@@ -1,4 +1,4 @@
-package com.skythecodemaster.skybot.packets;
+package com.skythecodemaster.skybot.websocket.packets;
 
 public class Packet {
   private String type; // InfoPacket, ResponsePacket, CommandPacket, ChatPacket

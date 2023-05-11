@@ -1,13 +1,9 @@
-package com.skythecodemaster.skybot.utils;
+package com.skythecodemaster.skybot.websocket.utils;
 
-import com.google.gson.Gson;
-import com.skythecodemaster.skybot.packets.outgoing.ResponsePacket;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.network.chat.Component;
-import org.java_websocket.WebSocket;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class CommandReceiver implements CommandSource {
   private final ArrayList<String> output = new ArrayList<>();

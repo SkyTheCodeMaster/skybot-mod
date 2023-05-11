@@ -1,6 +1,6 @@
-package com.skythecodemaster.skybot.packets.incoming;
+package com.skythecodemaster.skybot.websocket.packets.incoming;
 
-import com.skythecodemaster.skybot.packets.BasePacket;
+import com.skythecodemaster.skybot.websocket.packets.BasePacket;
 
 public class ChatPacket extends BasePacket {
   private String sender; // Whose name is inside the <>

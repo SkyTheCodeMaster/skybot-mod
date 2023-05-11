@@ -1,6 +1,6 @@
-package com.skythecodemaster.skybot.packets.incoming;
+package com.skythecodemaster.skybot.websocket.packets.incoming;
 
-import com.skythecodemaster.skybot.packets.BasePacket;
+import com.skythecodemaster.skybot.websocket.packets.BasePacket;
 
 public class InfoPacket extends BasePacket {
   private String data; // Current Values: "tps","players"

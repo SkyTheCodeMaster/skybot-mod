@@ -1,6 +1,6 @@
-package com.skythecodemaster.skybot.packets.incoming;
+package com.skythecodemaster.skybot.websocket.packets.incoming;
 
-import com.skythecodemaster.skybot.packets.BasePacket;
+import com.skythecodemaster.skybot.websocket.packets.BasePacket;
 
 public class CommandPacket extends BasePacket {
   private String command; // Minecraft command to execute
@@ -15,11 +15,11 @@ public class CommandPacket extends BasePacket {
   }
   
   public String stringArgs() {
-    String output = "";
+    StringBuilder output = new StringBuilder();
     for (String arg : this.args) {
-      output += arg + " ";
+      output.append(arg).append(" ");
     }
-    return output;
+    return output.toString();
   }
   
   public String fullyQualifiedCommand() {

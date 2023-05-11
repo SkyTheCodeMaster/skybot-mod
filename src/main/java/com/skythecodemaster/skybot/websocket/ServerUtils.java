@@ -1,13 +1,13 @@
-package com.skythecodemaster.skybot;
+package com.skythecodemaster.skybot.websocket;
 
 import com.google.gson.Gson;
-import com.skythecodemaster.skybot.packets.*;
-import com.skythecodemaster.skybot.packets.incoming.ChatPacket;
-import com.skythecodemaster.skybot.packets.incoming.CommandPacket;
-import com.skythecodemaster.skybot.packets.incoming.InfoPacket;
-import com.skythecodemaster.skybot.packets.outgoing.ResponsePacket;
-import com.skythecodemaster.skybot.utils.CommandReceiver;
-import com.skythecodemaster.skybot.utils.TickTimes;
+import com.skythecodemaster.skybot.websocket.packets.*;
+import com.skythecodemaster.skybot.websocket.packets.incoming.ChatPacket;
+import com.skythecodemaster.skybot.websocket.packets.incoming.CommandPacket;
+import com.skythecodemaster.skybot.websocket.packets.incoming.InfoPacket;
+import com.skythecodemaster.skybot.websocket.packets.outgoing.ResponsePacket;
+import com.skythecodemaster.skybot.websocket.utils.CommandReceiver;
+import com.skythecodemaster.skybot.websocket.utils.TickTimes;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.network.chat.*;
 import net.minecraft.server.MinecraftServer;
@@ -17,6 +17,7 @@ import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.server.ServerLifecycleHooks;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -57,7 +58,7 @@ public class ServerUtils {
   // Now provide methods for actually using the packet. Set these up as overloads so it's
   // simple.
   
-  public ResponsePacket executePacket(ChatPacket packet) {
+  public ResponsePacket executeChatPacket(ChatPacket packet) {
     try {
       // Grab the player list
       PlayerList players = ServerLifecycleHooks
@@ -99,7 +100,7 @@ public class ServerUtils {
     }
   }
   
-  public ResponsePacket executePacket(InfoPacket packet) {
+  public ResponsePacket executeInfoPacket(InfoPacket packet) {
     try {
       ServerData sData = new ServerData();
   
@@ -140,7 +141,7 @@ public class ServerUtils {
     }
   }
   
-  public ResponsePacket executePacket(CommandPacket packet) {
+  public ResponsePacket executeCommandPacket(CommandPacket packet) {
     try {
       MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
       server.getCommands().performPrefixedCommand(
@@ -157,5 +158,12 @@ public class ServerUtils {
         .setType("error_command")
         .setData("ERROR " + e.getMessage());
     }
+  }
+  
+  public String jsonifyResponse(@Nullable ResponsePacket resp) {
+    if (resp == null) {
+      return "'error occurred in data processing'";
+    }
+    return gson.toJson(resp);
   }
 }
