@@ -48,10 +48,10 @@ public class ServerUtils {
     Packet packet = gson.fromJson(jsonData, Packet.class);
     // Figure out what class to parse the resulting json from.
     return switch (packet.getType()) {
-      case "CommandPacket" -> gson.fromJson(packet.getValue(), CommandPacket.class);
-      case "InfoPacket"    -> gson.fromJson(packet.getValue(), InfoPacket.class);
-      case "ChatPacket"    -> gson.fromJson(packet.getValue(), ChatPacket.class);
-      default -> throw new IllegalArgumentException("Sent packet contains invalid type!");
+      case "command" -> gson.fromJson(packet.getValue(), CommandPacket.class);
+      case "info"    -> gson.fromJson(packet.getValue(), InfoPacket.class);
+      case "chat"    -> gson.fromJson(packet.getValue(), ChatPacket.class);
+      default -> throw new IllegalArgumentException("Sent packet contains invalid type \"" + packet.getType() + "\"!");
     };
   }
   

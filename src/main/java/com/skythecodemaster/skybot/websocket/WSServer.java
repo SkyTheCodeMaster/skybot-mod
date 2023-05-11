@@ -53,9 +53,15 @@ public class WSServer extends WebSocketServer {
   
   @Override
   public void onMessage(WebSocket conn, String message) {
-    LOGGER.info("Received message from "	+ conn.getRemoteSocketAddress() + ": " + message);
+    LOGGER.info("Received message from " + conn.getRemoteSocketAddress() + ": " + message);
     // Parse the json out to the base class
-    BasePacket packet = sUtils.parsePacket(message);
+    BasePacket packet = null;
+    try {
+      packet = sUtils.parsePacket(message);
+    } catch (IllegalArgumentException e) {
+      conn.send(e.getMessage());
+      return; // If we error and die, don't finish executing the packet.
+    }
     // Now execute based on the contents of the
     ResponsePacket resp = null;
     if (packet instanceof ChatPacket) {
@@ -65,11 +71,11 @@ public class WSServer extends WebSocketServer {
     } else if (packet instanceof CommandPacket) {
       resp = sUtils.executeCommandPacket((CommandPacket) packet);
     }
-    
+  
     // JSONify the response
     String json_resp = sUtils.jsonifyResponse(resp);
     // Send it down the websocket
-    
+  
   }
   
   @Override
