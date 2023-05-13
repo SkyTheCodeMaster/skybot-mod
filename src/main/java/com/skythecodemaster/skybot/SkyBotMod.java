@@ -1,5 +1,6 @@
 package com.skythecodemaster.skybot;
 
+import com.skythecodemaster.skybot.websocket.WSEvents;
 import com.skythecodemaster.skybot.websocket.WSServer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -18,9 +19,10 @@ public class SkyBotMod {
   
   public SkyBotMod() {
     MinecraftForge.EVENT_BUS.register(this);
+    MinecraftForge.EVENT_BUS.register(new WSEvents()); // Register the WS events
   }
   
-  // This is called when the server world finishes loading, aka perfect time to setup chat integration
+  // This is called when the server world finishes loading, aka perfect time to set up chat integration
   @SubscribeEvent
   public void onServerStarting(ServerStartingEvent event) {
     // Print out a little message

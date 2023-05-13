@@ -146,7 +146,7 @@ public class ServerUtils {
       MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
       server.getCommands().performPrefixedCommand(
         this.getSource(),
-        packet.fullyQualifiedCommand()
+        packet.getCommand()
       );
   
       return new ResponsePacket()

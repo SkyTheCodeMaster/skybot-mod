@@ -20,7 +20,7 @@ import org.java_websocket.server.WebSocketServer;
 public class WSServer extends WebSocketServer {
   
   private static final Logger LOGGER = LogUtils.getLogger();
-  private ServerUtils sUtils = new ServerUtils();
+  private final ServerUtils sUtils = new ServerUtils();
   
   public WSServer(InetSocketAddress address) {
     super(address);
@@ -28,26 +28,29 @@ public class WSServer extends WebSocketServer {
     LOGGER.info("WS Server instantiated...");
   }
   
-  private WebSocket conn;
+  private static WebSocket conn;
   
-  public WebSocket getConn() {
-    return this.conn;
+  public static void sendString(String data) {
+    if (conn == null) {
+      return;
+    }
+    conn.send(data);
   }
   
   @Override
   public void onOpen(WebSocket conn, ClientHandshake handshake) {
-    if (this.conn != null) {
+    if (WSServer.conn != null) {
       conn.send("client already connected");
       conn.close();
     }
-    this.conn = conn;
+    WSServer.conn = conn;
     conn.send("hello"); // Later we will add information packets such as players, version, etc
     LOGGER.info("New client connected: " + conn.getRemoteSocketAddress());
   }
   
   @Override
   public void onClose(WebSocket conn, int code, String reason, boolean remote) {
-    this.conn = null;
+    WSServer.conn = null;
     LOGGER.info("Client disconnected: " + conn.getRemoteSocketAddress() + " with exit code " + code + " additional info: " + reason);
   }
   
@@ -55,7 +58,7 @@ public class WSServer extends WebSocketServer {
   public void onMessage(WebSocket conn, String message) {
     LOGGER.info("Received message from " + conn.getRemoteSocketAddress() + ": " + message);
     // Parse the json out to the base class
-    BasePacket packet = null;
+    BasePacket packet;
     try {
       packet = sUtils.parsePacket(message);
     } catch (IllegalArgumentException e) {
@@ -75,14 +78,14 @@ public class WSServer extends WebSocketServer {
     // JSONify the response
     String json_resp = sUtils.jsonifyResponse(resp);
     // Send it down the websocket
-  
+    conn.send(json_resp);
   }
   
   @Override
   public void onMessage(WebSocket conn, ByteBuffer message) {
     LOGGER.info("Received ByteBuffer from "	+ conn.getRemoteSocketAddress());
     // echo
-    conn.send(message);
+    conn.send("Binary messages are not supported!");
   }
   
   @Override
