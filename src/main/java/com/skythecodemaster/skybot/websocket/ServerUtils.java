@@ -47,12 +47,14 @@ public class ServerUtils {
     // Parse the top level json
     Packet packet = gson.fromJson(jsonData, Packet.class);
     // Figure out what class to parse the resulting json from.
-    return switch (packet.getType()) {
+    BasePacket result = switch (packet.getType()) {
       case "command" -> gson.fromJson(packet.getValue(), CommandPacket.class);
       case "info"    -> gson.fromJson(packet.getValue(), InfoPacket.class);
       case "chat"    -> gson.fromJson(packet.getValue(), ChatPacket.class);
       default -> throw new IllegalArgumentException("Sent packet contains invalid type \"" + packet.getType() + "\"!");
     };
+    result.setId(packet.getId());
+    return result;
   }
   
   // Now provide methods for actually using the packet. Set these up as overloads so it's
@@ -91,11 +93,13 @@ public class ServerUtils {
       // packet with 'OK' as its response.
       return new ResponsePacket()
         .setType("chat")
+        .setId(packet.getId())
         .setData("OK");
     } catch (Exception e) {
       // Something went wrong, report it.
       return new ResponsePacket()
         .setType("error_chat")
+        .setId(packet.getId())
         .setData("ERROR " + e.getMessage());
     }
   }
@@ -126,11 +130,13 @@ public class ServerUtils {
           // Make a response packet
           return new ResponsePacket()
             .setType("info")
+            .setId(packet.getId())
             .setData(Arrays.toString(names));
         }
         default -> {
           return new ResponsePacket()
             .setType("info")
+            .setId(packet.getId())
             .setData("data type not found");
         }
       }
@@ -151,11 +157,13 @@ public class ServerUtils {
   
       return new ResponsePacket()
         .setType("command")
+        .setId(packet.getId())
         .setData(receiver.getLastOutput());
       
     } catch (Exception e) {
       return new ResponsePacket()
         .setType("error_command")
+        .setId(packet.getId())
         .setData("ERROR " + e.getMessage());
     }
   }

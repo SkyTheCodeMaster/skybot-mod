@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fa55f93-625f-4047-8e0a-98e29c010d87" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/commands/CommandsRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/commands/tpa/TPACommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/websocket/WSEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/SkyBotMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/SkyBotMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/commands/tpa/TPACommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/commands/tpa/TPACommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/websocket/ServerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/websocket/ServerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/websocket/WSServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/websocket/WSServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/websocket/packets/incoming/CommandPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/websocket/packets/incoming/CommandPacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/websocket/packets/BasePacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/websocket/packets/BasePacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/websocket/packets/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/websocket/packets/Packet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/websocket/packets/outgoing/ResponsePacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/websocket/packets/outgoing/ResponsePacket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +21,18 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,18 +55,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.skythecodemaster.skybot.commands" />
     </key>
   </component>
+  <component name="RunManager" selected="Application.runClient" />
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
