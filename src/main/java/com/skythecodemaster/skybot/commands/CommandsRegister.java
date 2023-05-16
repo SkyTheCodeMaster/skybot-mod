@@ -1,8 +1,10 @@
 package com.skythecodemaster.skybot.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
+import com.skythecodemaster.skybot.commands.tpa.TPAAcceptCommand;
 import com.skythecodemaster.skybot.commands.tpa.TPACommand;
 import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -12,6 +14,7 @@ public class CommandsRegister {
     CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
     
     // Register each command
-    TPACommand.register(dispatcher);
+    dispatcher.register(TPACommand.register());
+    dispatcher.register(TPAAcceptCommand.register());
   }
 }

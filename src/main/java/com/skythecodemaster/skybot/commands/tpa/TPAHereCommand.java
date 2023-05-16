@@ -3,7 +3,6 @@ package com.skythecodemaster.skybot.commands.tpa;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.exceptions.CommandExceptionType;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
@@ -17,13 +16,11 @@ import java.time.Instant;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class TPACommand implements Command<CommandSourceStack> {
-  private static final TPACommand CMD = new TPACommand();
-  // target, source
-  public static final HashMap<UUID, Request> requests = new HashMap<>();
+public class TPAHereCommand implements Command<CommandSourceStack> {
+  private static final TPAHereCommand CMD = new TPAHereCommand();
   
   public static LiteralArgumentBuilder<CommandSourceStack> register() {
-    return Commands.literal("tpa")
+    return Commands.literal("tpahere")
       .requires(cs -> cs.hasPermission(0))
       .then(Commands.argument("other", EntityArgument.players()))
       .executes(CMD);
@@ -48,7 +45,7 @@ public class TPACommand implements Command<CommandSourceStack> {
       sourcePlayer.getUUID(),
       targetPlayer.getUUID(),
       expiryTime,
-      true
+      false
     );
     // Insert it into data storage
     TPACommand.requests.put(
@@ -69,7 +66,7 @@ public class TPACommand implements Command<CommandSourceStack> {
         )
       )
       .append(Component.literal(">"))
-      .append(Component.literal(" would like to teleport to you.\n"))
+      .append(Component.literal(" would like you to teleport to them..\n"))
       .append(Component.literal("Type "))
       .append(Component.literal("/tpaccept").withStyle(ChatFormatting.GRAY))
       .append(Component.literal(" to accept."));
