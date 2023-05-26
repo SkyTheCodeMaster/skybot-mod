@@ -131,6 +131,8 @@ tasks.named('shadowJar', com.github.jengelman.gradle.plugins.shadow.tasks.Shadow
     exclude 'module-info.class'
 
     finalizedBy 'reobfShadowJar'
+
+    archiveFileName = "skybot-${minecraft_version}-${mod_version}.jar"
 }
 
 tasks.named('assemble') {
