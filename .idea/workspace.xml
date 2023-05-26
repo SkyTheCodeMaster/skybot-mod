@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fa55f93-625f-4047-8e0a-98e29c010d87" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/SkyBotMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/SkyBotMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/commands/CommandsRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/commands/CommandsRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/commands/tpa/TPACommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/commands/tpa/TPACommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/commands/tpa/TPAHereCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/commands/tpa/TPAHereCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/websocket/WSEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skythecodemaster/skybot/websocket/WSEvents.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +83,7 @@
       <workItem from="1684256186576" duration="934000" />
       <workItem from="1684325142415" duration="2339000" />
       <workItem from="1685128820909" duration="2119000" />
-      <workItem from="1685141314287" duration="115000" />
+      <workItem from="1685141314287" duration="832000" />
     </task>
     <servers />
   </component>

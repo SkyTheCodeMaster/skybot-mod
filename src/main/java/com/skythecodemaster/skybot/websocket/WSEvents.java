@@ -53,8 +53,8 @@ public class WSEvents {
   
   @SubscribeEvent
   public void onAdvancementEvent(AdvancementEvent.AdvancementEarnEvent event) {
-    String advancementName = event.getAdvancement().toString();
-    String username = event.getEntity().getName().toString();
+    String advancementName = event.getAdvancement().getDisplay().getTitle().getString();
+    String username = event.getEntity().getName().getString();
   
     HashMap<String, String> data = new HashMap<>();
     data.put("username",username);
@@ -73,8 +73,8 @@ public class WSEvents {
   @SubscribeEvent
   public void onPlayerLoggedOutEvent(PlayerEvent.PlayerLoggedOutEvent event) {
     Player player = event.getEntity();
-    // A player has joined.
-    String username = player.getName().toString();
+    // A player has left.
+    String username = player.getName().getString();
   
     ResponsePacket response = new ResponsePacket()
       .setType("leave")
@@ -100,7 +100,7 @@ public class WSEvents {
   public void onPlayerLoggedInEvent(PlayerEvent.PlayerLoggedInEvent event) {
     Player player = event.getEntity();
     // A player has joined.
-    String username = player.getName().toString();
+    String username = player.getName().getString();
       
     ResponsePacket response = new ResponsePacket()
       .setType("join")
