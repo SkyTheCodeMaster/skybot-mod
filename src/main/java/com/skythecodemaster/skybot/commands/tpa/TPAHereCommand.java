@@ -8,13 +8,12 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.commands.arguments.selector.EntitySelector;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerPlayer;
 
 import java.time.Instant;
-import java.util.HashMap;
-import java.util.UUID;
 
 public class TPAHereCommand implements Command<CommandSourceStack> {
   private static final TPAHereCommand CMD = new TPAHereCommand();
@@ -22,14 +21,15 @@ public class TPAHereCommand implements Command<CommandSourceStack> {
   public static LiteralArgumentBuilder<CommandSourceStack> register() {
     return Commands.literal("tpahere")
       .requires(cs -> cs.hasPermission(0))
-      .then(Commands.argument("other", EntityArgument.players()))
-      .executes(CMD);
+      .then(Commands.argument("other", EntityArgument.players())
+      .executes(CMD));
   }
   
   @Override
   public int run(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
     ServerPlayer sourcePlayer = context.getSource().getPlayer();
-    ServerPlayer targetPlayer = context.getArgument("other", ServerPlayer.class);
+    EntitySelector targets = context.getArgument("other", EntitySelector.class);
+    ServerPlayer targetPlayer = targets.findSinglePlayer(context.getSource());
     /*if (sourcePlayer == null || targetPlayer == null) {
       throw new CommandSyntaxException(
         CommandExceptionType.class,
@@ -40,7 +40,6 @@ public class TPAHereCommand implements Command<CommandSourceStack> {
     // Create the request
     long expiryTime = Instant.now().getEpochSecond() + 120;
     assert sourcePlayer != null;
-    assert targetPlayer != null;
     Request request = new Request(
       sourcePlayer.getUUID(),
       targetPlayer.getUUID(),

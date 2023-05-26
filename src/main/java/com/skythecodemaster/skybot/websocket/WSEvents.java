@@ -38,19 +38,13 @@ public class WSEvents {
     LivingEntity entity = event.getEntity();
     if (entity instanceof ServerPlayer) {
       // A player has died.
-      String username = entity.getName().getString();
       String source = event.getSource().
         getLocalizedDeathMessage(entity).
         getString();
-      HashMap<String, String> data = new HashMap<>();
-      data.put("username",username);
-      data.put("source",source);
-      
-      String sData = gson.toJson(data);
       
       ResponsePacket response = new ResponsePacket()
         .setType("death")
-        .setData(sData);
+        .setData(source);
   
       String sPacket = gson.toJson(response);
       WSServer.sendString(sPacket);

@@ -34,6 +34,6 @@ public class SkyBotMod {
     
     WSServer server = new WSServer(new InetSocketAddress(host,port));
     LOGGER.info("Running server on ws://" + host + ":" + port);
-    server.run();
+    new Thread(server).start();
   }
 }
