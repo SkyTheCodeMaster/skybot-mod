@@ -114,6 +114,7 @@ public class ServerUtils {
           String data = Arrays.toString(times.toArray());
           return new ResponsePacket()
             .setType("info")
+            .setId(packet.getId())
             .setData(data);
         }
         case "players" -> {
