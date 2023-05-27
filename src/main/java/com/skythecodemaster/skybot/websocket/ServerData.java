@@ -8,7 +8,7 @@ import net.minecraftforge.server.ServerLifecycleHooks;
 import java.util.List;
 
 public class ServerData {
-  private double ms_to_tps(long mspt) {
+  private double ms_to_tps(double mspt) {
     return Math.min(1000.0 / mspt, 20.0);
   }
   
@@ -23,17 +23,15 @@ public class ServerData {
     MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
     long[] times = server.tickTimes;
     long mspt_sum = 0;
-    long tps_sum = 0;
     
     for (long _mspt : times) {
       long mspt = _mspt / 1000000L;
       mspt_sum += mspt;
-      tps_sum += ms_to_tps(mspt);
     }
     
     // Average them out
     double mspt = mspt_sum / (double) times.length;
-    double tps = tps_sum / (double) times.length;
+    double tps = ms_to_tps(mspt);
   
     return new TickTimes(mspt,tps);
     

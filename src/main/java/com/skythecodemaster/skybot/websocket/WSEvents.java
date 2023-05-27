@@ -86,7 +86,7 @@ public class WSEvents {
   
   @SubscribeEvent
   public void onPlayerWakeUpEvent(PlayerWakeUpEvent event) {
-    String username = event.getEntity().getName().toString();
+    String username = event.getEntity().getName().getString();
     
     ResponsePacket response = new ResponsePacket()
       .setType("sleep")
