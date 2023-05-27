@@ -1,6 +1,7 @@
 package com.skythecodemaster.skybot.websocket;
 
 import com.google.gson.Gson;
+import com.mojang.logging.LogUtils;
 import com.skythecodemaster.skybot.websocket.packets.*;
 import com.skythecodemaster.skybot.websocket.packets.incoming.ChatPacket;
 import com.skythecodemaster.skybot.websocket.packets.incoming.CommandPacket;
@@ -16,6 +17,7 @@ import net.minecraft.server.players.PlayerList;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.server.ServerLifecycleHooks;
+import org.slf4j.Logger;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -26,6 +28,7 @@ public class ServerUtils {
   // Provide methods for taking a data packet and returning a new one with the response.
   private final Gson gson = new Gson(); // Use Gson for parse/stringify
   private final CommandReceiver receiver = new CommandReceiver();
+  private static final Logger LOGGER = LogUtils.getLogger();
   
   // Get the command source.
   private CommandSourceStack getSource() {
@@ -125,14 +128,11 @@ public class ServerUtils {
             arr.add(player.getName().getString());
           }
           
-          // Convert it to a flat array
-          String[] names = arr.toArray(new String[0]);
-          
           // Make a response packet
           return new ResponsePacket()
             .setType("info")
             .setId(packet.getId())
-            .setData(Arrays.toString(names));
+            .setData(gson.toJson(arr));
         }
         default -> {
           return new ResponsePacket()
