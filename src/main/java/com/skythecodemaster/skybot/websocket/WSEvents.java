@@ -55,6 +55,9 @@ public class WSEvents {
   public void onAdvancementEvent(AdvancementEvent.AdvancementEarnEvent event) {
     String advancementName = event.getAdvancement().getDisplay().getTitle().getString();
     String username = event.getEntity().getName().getString();
+    if (advancementName.equals("")) {
+      return;
+    }
   
     HashMap<String, String> data = new HashMap<>();
     data.put("username",username);
