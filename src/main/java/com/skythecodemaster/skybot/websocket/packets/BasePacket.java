@@ -1,7 +1,7 @@
 package com.skythecodemaster.skybot.websocket.packets;
 
 public class BasePacket {
-  private int id;
+  private transient int id;
   
   public BasePacket setId(int id) {
     this.id = id;

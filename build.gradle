@@ -109,10 +109,12 @@ tasks.withType(Jar).configureEach {
         filter(org.apache.tools.ant.filters.FixCrLfFilter.class,
                 eol: org.apache.tools.ant.filters.FixCrLfFilter.CrLf.newInstance('lf'))
     }
+
 }
 
 tasks.named('jar', Jar).configure {
     finalizedBy 'reobfJar'
+
     archiveClassifier.set('lite')
 }
 @SuppressWarnings('GrMethodMayBeStatic')
@@ -122,6 +124,7 @@ def relocate(origin) {
 
 // noinspection UnnecessaryQualifiedReference
 tasks.named('shadowJar', com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar).configure {
+    archiveBaseName.set("skybot-${minecraft_version}-${mod_version}.jar")
     preserveFileTimestamps = false
     reproducibleFileOrder = true
     archiveClassifier.set('')
@@ -131,8 +134,6 @@ tasks.named('shadowJar', com.github.jengelman.gradle.plugins.shadow.tasks.Shadow
     exclude 'module-info.class'
 
     finalizedBy 'reobfShadowJar'
-
-    archiveFileName = "skybot-${minecraft_version}-${mod_version}.jar"
 }
 
 tasks.named('assemble') {
@@ -143,9 +144,10 @@ reobf {
     shadowJar {}
 }
 
+//shadowJar.archiveName = 'skybot-${minecraft_version}-${mod_version}.jar'
 // Without these two, Gradle will issue warnings about task inputs from other tasks outputs without declaring dependencies
 tasks.named('reobfShadowJar') { dependsOn tasks.named('jar') }
-tasks.named('shadowJar') { dependsOn 'reobfJar' }
+tasks.named('shadowJar') {dependsOn 'reobfJar'}
 
 // noinspection UnnecessaryQualifiedReference
 tasks.withType(net.minecraftforge.gradle.userdev.tasks.RenameJarInPlace).configureEach {
