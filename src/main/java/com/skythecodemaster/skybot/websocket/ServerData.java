@@ -26,7 +26,7 @@ public class ServerData {
     long tps_sum = 0;
     
     for (long _mspt : times) {
-      long mspt = _mspt / 1000L;
+      long mspt = _mspt / 1000000L;
       mspt_sum += mspt;
       tps_sum += ms_to_tps(mspt);
     }
