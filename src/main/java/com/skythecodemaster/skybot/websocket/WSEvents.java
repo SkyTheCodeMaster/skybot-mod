@@ -10,6 +10,8 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.AdvancementEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerWakeUpEvent;
+import net.minecraftforge.event.server.ServerStartedEvent;
+import net.minecraftforge.event.server.ServerStoppingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.HashMap;
@@ -109,6 +111,26 @@ public class WSEvents {
       .setType("join")
       .setData(username);
       
+    String sPacket = gson.toJson(response);
+    WSServer.sendString(sPacket);
+  }
+  
+  @SubscribeEvent
+  public void onServerStoppingEvent(ServerStoppingEvent event) {
+    ResponsePacket response = new ResponsePacket()
+      .setType("server_stop")
+      .setData("");
+    
+    String sPacket = gson.toJson(response);
+    WSServer.sendString(sPacket);
+  }
+  
+  @SubscribeEvent
+  public void onServerStartedEvent(ServerStartedEvent event) {
+    ResponsePacket response = new ResponsePacket()
+      .setType("server_start")
+      .setData("");
+    
     String sPacket = gson.toJson(response);
     WSServer.sendString(sPacket);
   }

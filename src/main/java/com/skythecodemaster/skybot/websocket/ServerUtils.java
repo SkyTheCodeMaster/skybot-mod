@@ -13,7 +13,6 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.network.chat.*;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.players.PlayerList;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.server.ServerLifecycleHooks;
@@ -66,9 +65,10 @@ public class ServerUtils {
   public ResponsePacket executeChatPacket(ChatPacket packet) {
     try {
       // Grab the player list
-      PlayerList players = ServerLifecycleHooks
+      List<ServerPlayer> players = ServerLifecycleHooks
         .getCurrentServer()
-        .getPlayerList();
+        .getPlayerList()
+        .getPlayers();
   
       HoverEvent hvrEvent = new HoverEvent(
         HoverEvent.Action.SHOW_TEXT,
@@ -85,12 +85,11 @@ public class ServerUtils {
       );
   
       MutableComponent message = Component.literal(formatted)
-        .setStyle(style);
+        .withStyle(style);
   
-      players.broadcastSystemMessage(
-        message,
-        true
-      );
+      for (ServerPlayer player : players) {
+        player.sendSystemMessage(message);
+      }
   
       // Because we do not need to return anything of importance, just return a
       // packet with 'OK' as its response.
