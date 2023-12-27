@@ -8,6 +8,7 @@ plugins {
 
 version = mod_version
 group = mod_group_id
+jarJar.enable()
 
 repositories {
     mavenLocal()
@@ -81,7 +82,10 @@ dependencies {
     // For all intends and purposes: You can treat this dependency as if it is a normal library you would use.
     implementation "net.neoforged:forge:${neo_version}"
 
-    //jarJar(group: 'org.java-websocket', name: 'Java-WebSocket', version: '(1.5.3,1.5.4]')
+    implementation "org.java-websocket:Java-WebSocket:1.5.3"
+    jarJar(group: 'org.java-websocket', name: 'Java-WebSocket', version: '(1.5.0,1.6.0]') {
+        jarJar.pin(it, "1.5.3")
+    }
     //shade "org.java-websocket:Java-WebSocket:1.5.3"
     // Example mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
