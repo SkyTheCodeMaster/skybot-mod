@@ -75,6 +75,8 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 configurations {
     library
     implementation.extendsFrom library
+
+    dataImplementation.extendsFrom implementation
 }
 
 dependencies {
@@ -86,9 +88,9 @@ dependencies {
     // For all intends and purposes: You can treat this dependency as if it is a normal library you would use.
     implementation "net.neoforged:forge:${neo_version}"
 
-    library(group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.5.3') {
-        exclude module: 'slf4j-api'
-    }
+    jarJar(group: 'org.java-websocket', name: 'Java-WebSocket', version: '(1.5.3,1.5.4]')
+
+    dataImplementation sourceSets.main.output
     // Example mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
