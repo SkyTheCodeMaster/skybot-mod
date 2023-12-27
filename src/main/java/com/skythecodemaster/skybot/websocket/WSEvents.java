@@ -19,7 +19,7 @@ public class WSEvents {
   @SubscribeEvent
   public void onServerChat(ServerChatEvent event) {
     String message = event.getRawText();
-    String username = event.getUsername();
+    String username = event.getPlayer().getName().toString();
     HashMap<String, String> data = new HashMap<>();
     data.put("username",username);
     data.put("message" ,message );

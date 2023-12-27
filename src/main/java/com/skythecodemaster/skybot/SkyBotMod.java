@@ -29,11 +29,11 @@ public class SkyBotMod {
     LOGGER.info("SkyBot Server activating...");
     
     // Set host and port for server
-    String host = "localhost";
+    String host = "0.0.0.0";
     int port = 20500;
     
     WSServer server = new WSServer(new InetSocketAddress(host,port));
     LOGGER.info("Running server on ws://" + host + ":" + port);
-    server.run();
+    //server.run();
   }
 }

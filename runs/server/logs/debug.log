@@ -1,0 +1,201 @@
+[26Dec.2023 23:00:50.616] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--nogui, --launchTarget, forgeserveruserdev, --gameDir, ., --fml.forgeVersion, 47.1.84, --fml.fmlVersion, 47.1.47, --fml.mcVersion, 1.20.1, --fml.mcpVersion, 20230612.114412]
+[26Dec.2023 23:00:50.619] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.10+10.0.10+main.22f00f84 starting: java version 17.0.2 by Eclipse Adoptium; OS Windows 10 arch amd64 version 10.0
+[26Dec.2023 23:00:50.642] [main/DEBUG] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Found launch services [minecraft,forgeclient,forgegametestserverdev,forgedatauserdev,testharness,forgeserverdev,forgeserveruserdev,forgeclientdev,forgeclientuserdev,forgeserver,forgedatadev,forgegametestserveruserdev]
+[26Dec.2023 23:00:50.652] [main/DEBUG] [cpw.mods.modlauncher.NameMappingServiceHandler/MODLAUNCHER]: Found naming services : [srgtomcp]
+[26Dec.2023 23:00:50.662] [main/DEBUG] [cpw.mods.modlauncher.LaunchPluginHandler/MODLAUNCHER]: Found launch plugins: [mixin,eventbus,slf4jfixer,object_holder_definalize,runtime_enum_extender,capability_token_subclass,accesstransformer,runtimedistcleaner]
+[26Dec.2023 23:00:50.670] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Discovering transformation services
+[26Dec.2023 23:00:50.673] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path GAMEDIR is C:\Users\owenp\IdeaProjects\skybot-mod\runs\server
+[26Dec.2023 23:00:50.673] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path MODSDIR is C:\Users\owenp\IdeaProjects\skybot-mod\runs\server\mods
+[26Dec.2023 23:00:50.673] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path CONFIGDIR is C:\Users\owenp\IdeaProjects\skybot-mod\runs\server\config
+[26Dec.2023 23:00:50.673] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path FMLCONFIG is C:\Users\owenp\IdeaProjects\skybot-mod\runs\server\config\fml.toml
+[26Dec.2023 23:00:50.694] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: Loaded FML config from C:\Users\owenp\IdeaProjects\skybot-mod\runs\server\config\fml.toml
+[26Dec.2023 23:00:50.694] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowControl is true
+[26Dec.2023 23:00:50.694] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig maxThreads is 16
+[26Dec.2023 23:00:50.694] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig versionCheck is true
+[26Dec.2023 23:00:50.694] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig defaultConfigPath is defaultconfigs
+[26Dec.2023 23:00:50.694] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig disableOptimizedDFU is true
+[26Dec.2023 23:00:50.694] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowProvider is fmlearlywindow
+[26Dec.2023 23:00:50.694] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowWidth is 854
+[26Dec.2023 23:00:50.694] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowHeight is 480
+[26Dec.2023 23:00:50.694] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowFBScale is 1
+[26Dec.2023 23:00:50.694] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowMaximized is false
+[26Dec.2023 23:00:50.694] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowSkipGLVersions is []
+[26Dec.2023 23:00:50.695] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowSquir is false
+[26Dec.2023 23:00:50.698] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Found additional transformation services from discovery services: 
+[26Dec.2023 23:00:50.703] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserveruserdev
+[26Dec.2023 23:00:50.708] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Found transformer services : [mixin,fml]
+[26Dec.2023 23:00:50.708] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Transformation services loading
+[26Dec.2023 23:00:50.708] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Loading service mixin
+[26Dec.2023 23:00:50.709] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Loaded service mixin
+[26Dec.2023 23:00:50.709] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Loading service fml
+[26Dec.2023 23:00:50.709] [main/DEBUG] [net.minecraftforge.fml.loading.LauncherVersion/CORE]: Found FMLLauncher version 47.1
+[26Dec.2023 23:00:50.709] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: FML 47.1 loading
+[26Dec.2023 23:00:50.709] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: FML found ModLauncher version : 10.0.10+10.0.10+main.22f00f84
+[26Dec.2023 23:00:50.710] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: FML found AccessTransformer version : 8.0.4+66+master.c09db6d7
+[26Dec.2023 23:00:50.710] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: FML found EventBus version : 6.0.5+6.0.5+master.eb8e549b
+[26Dec.2023 23:00:50.710] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Found Runtime Dist Cleaner
+[26Dec.2023 23:00:50.711] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: FML found CoreMod version : 5.0.1+15+master.dc5a2922
+[26Dec.2023 23:00:50.711] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Found ForgeSPI package implementation version 7.0.1+7.0.1+master.d2b38bf6
+[26Dec.2023 23:00:50.711] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Found ForgeSPI package specification 5
+[26Dec.2023 23:00:50.711] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Loaded service fml
+[26Dec.2023 23:00:50.712] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Configuring option handling for services
+[26Dec.2023 23:00:50.716] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Transformation services initializing
+[26Dec.2023 23:00:50.716] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initializing transformation service mixin
+[26Dec.2023 23:00:50.726] [main/DEBUG] [mixin/]: MixinService [ModLauncher] was successfully booted in cpw.mods.cl.ModuleClassLoader@9225652
+[26Dec.2023 23:00:50.736] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/owenp/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23139!/ Service=ModLauncher Env=SERVER
+[26Dec.2023 23:00:50.739] [main/DEBUG] [mixin/]: Initialising Mixin Platform Manager
+[26Dec.2023 23:00:50.739] [main/DEBUG] [mixin/]: Adding mixin platform agents for container ModLauncher Root Container(ModLauncher:4f56a0a2)
+[26Dec.2023 23:00:50.739] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for ModLauncher Root Container(ModLauncher:4f56a0a2)
+[26Dec.2023 23:00:50.740] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container ModLauncher Root Container(ModLauncher:4f56a0a2)
+[26Dec.2023 23:00:50.740] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for ModLauncher Root Container(ModLauncher:4f56a0a2)
+[26Dec.2023 23:00:50.740] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container ModLauncher Root Container(ModLauncher:4f56a0a2)
+[26Dec.2023 23:00:50.742] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initialized transformation service mixin
+[26Dec.2023 23:00:50.742] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initializing transformation service fml
+[26Dec.2023 23:00:50.742] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Setting up basic FML game directories
+[26Dec.2023 23:00:50.742] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path GAMEDIR is C:\Users\owenp\IdeaProjects\skybot-mod\runs\server
+[26Dec.2023 23:00:50.742] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path MODSDIR is C:\Users\owenp\IdeaProjects\skybot-mod\runs\server\mods
+[26Dec.2023 23:00:50.743] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path CONFIGDIR is C:\Users\owenp\IdeaProjects\skybot-mod\runs\server\config
+[26Dec.2023 23:00:50.743] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path FMLCONFIG is C:\Users\owenp\IdeaProjects\skybot-mod\runs\server\config\fml.toml
+[26Dec.2023 23:00:50.743] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Loading configuration
+[26Dec.2023 23:00:50.744] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: Loaded FML config from C:\Users\owenp\IdeaProjects\skybot-mod\runs\server\config\fml.toml
+[26Dec.2023 23:00:50.744] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowControl is true
+[26Dec.2023 23:00:50.745] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig maxThreads is 16
+[26Dec.2023 23:00:50.745] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig versionCheck is true
+[26Dec.2023 23:00:50.745] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig defaultConfigPath is defaultconfigs
+[26Dec.2023 23:00:50.745] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig disableOptimizedDFU is true
+[26Dec.2023 23:00:50.745] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowProvider is fmlearlywindow
+[26Dec.2023 23:00:50.745] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowWidth is 854
+[26Dec.2023 23:00:50.745] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowHeight is 480
+[26Dec.2023 23:00:50.745] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowFBScale is 1
+[26Dec.2023 23:00:50.745] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowMaximized is false
+[26Dec.2023 23:00:50.745] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowSkipGLVersions is []
+[26Dec.2023 23:00:50.745] [main/TRACE] [net.minecraftforge.fml.loading.FMLConfig/CORE]: FMLConfig earlyWindowSquir is false
+[26Dec.2023 23:00:50.745] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Preparing ModFile
+[26Dec.2023 23:00:50.747] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Preparing launch handler
+[26Dec.2023 23:00:50.747] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Using forgeserveruserdev as launch service
+[26Dec.2023 23:00:50.750] [main/DEBUG] [AXFORM/AXFORM]: Set name handler Service NameHandler from mcp to srg
+[26Dec.2023 23:00:50.756] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Received command line version data  : VersionInfo[forgeVersion=47.1.84, fmlVersion=47.1.47, mcVersion=1.20.1, mcpVersion=20230612.114412]
+[26Dec.2023 23:00:50.756] [main/DEBUG] [net.minecraftforge.fml.loading.RuntimeDistCleaner/DISTXFORM]: Configuring for Dist DEDICATED_SERVER
+[26Dec.2023 23:00:50.757] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initialized transformation service fml
+[26Dec.2023 23:00:50.757] [main/DEBUG] [cpw.mods.modlauncher.NameMappingServiceHandler/MODLAUNCHER]: Current naming domain is 'mcp'
+[26Dec.2023 23:00:50.758] [main/DEBUG] [cpw.mods.modlauncher.NameMappingServiceHandler/MODLAUNCHER]: Identified name mapping providers {srg=srgtomcp:1234}
+[26Dec.2023 23:00:50.758] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Transformation services begin scanning
+[26Dec.2023 23:00:50.758] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Beginning scan trigger - transformation service mixin
+[26Dec.2023 23:00:50.759] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: End scan trigger - transformation service mixin
+[26Dec.2023 23:00:50.759] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Beginning scan trigger - transformation service fml
+[26Dec.2023 23:00:50.759] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Initiating mod scan
+[26Dec.2023 23:00:50.759] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/SCAN]: Scanning for Mod Locators
+[26Dec.2023 23:00:50.769] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModListHandler/CORE]: Found mod coordinates from lists: []
+[26Dec.2023 23:00:50.771] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/CORE]: Found Mod Locators : (mods folder:47.1),(maven libs:47.1),(exploded directory:47.1),(minecraft:47.1),(userdev classpath:47.1),(builtin game layer libraries:47.1)
+[26Dec.2023 23:00:50.771] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/CORE]: Found Dependency Locators : (JarInJar:47.1)
+[26Dec.2023 23:00:50.771] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Scanning for mods and other resources to load. We know 6 ways to find mods
+[26Dec.2023 23:00:50.771] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Trying locator {mods folder locator at C:\Users\owenp\IdeaProjects\skybot-mod\runs\server\mods}
+[26Dec.2023 23:00:50.771] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModsFolderLocator/SCAN]: Scanning mods dir C:\Users\owenp\IdeaProjects\skybot-mod\runs\server\mods for mods
+[26Dec.2023 23:00:50.773] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Locator {mods folder locator at C:\Users\owenp\IdeaProjects\skybot-mod\runs\server\mods} found 0 candidates or errors
+[26Dec.2023 23:00:50.774] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Locator {mods folder locator at C:\Users\owenp\IdeaProjects\skybot-mod\runs\server\mods} found 0 valid mod files
+[26Dec.2023 23:00:50.774] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Trying locator {Maven Directory locator for mods []}
+[26Dec.2023 23:00:50.775] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Locator {Maven Directory locator for mods []} found 0 candidates or errors
+[26Dec.2023 23:00:50.775] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Locator {Maven Directory locator for mods []} found 0 valid mod files
+[26Dec.2023 23:00:50.775] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Trying locator {ExplodedDir locator}
+[26Dec.2023 23:00:50.776] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Locator {ExplodedDir locator} found 0 candidates or errors
+[26Dec.2023 23:00:50.776] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Locator {ExplodedDir locator} found 0 valid mod files
+[26Dec.2023 23:00:50.776] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Trying locator net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@2c22a348
+[26Dec.2023 23:00:50.777] [main/DEBUG] [net.minecraftforge.fml.loading.targets.CommonLaunchHandler/CORE]: Got mod coordinates skybot-mod%%C:\Users\owenp\IdeaProjects\skybot-mod\build\resources\main;skybot-mod%%C:\Users\owenp\IdeaProjects\skybot-mod\build\classes\java\main from env
+[26Dec.2023 23:00:50.778] [main/DEBUG] [net.minecraftforge.fml.loading.targets.CommonLaunchHandler/CORE]: Found supplied mod coordinates [{skybot-mod=[C:\Users\owenp\IdeaProjects\skybot-mod\build\resources\main, C:\Users\owenp\IdeaProjects\skybot-mod\build\classes\java\main]}]
+[26Dec.2023 23:00:50.899] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file forge-1.20.1-47.1.84.jar with {minecraft} mods - versions {1.20.1}
+[26Dec.2023 23:00:50.903] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate C:\Users\owenp\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-minecraft\47.1.47\70c137579710b203f0220b80a90eff3db19b32a2\language-minecraft-47.1.47.jar
+[26Dec.2023 23:00:50.903] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\owenp\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-minecraft\47.1.47\70c137579710b203f0220b80a90eff3db19b32a2\language-minecraft-47.1.47.jar is missing mods.toml file
+[26Dec.2023 23:00:50.906] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate C:\Users\owenp\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-lowcode\47.1.47\b9cb4bc84722dc99e902883f8ea5a952c0415d5c\language-lowcode-47.1.47.jar
+[26Dec.2023 23:00:50.906] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\owenp\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-lowcode\47.1.47\b9cb4bc84722dc99e902883f8ea5a952c0415d5c\language-lowcode-47.1.47.jar is missing mods.toml file
+[26Dec.2023 23:00:50.909] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate C:\Users\owenp\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\core\47.1.47\915a0dc36418f3c3bf74e56015d1cb79ef5430f0\core-47.1.47.jar
+[26Dec.2023 23:00:50.909] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\owenp\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\core\47.1.47\915a0dc36418f3c3bf74e56015d1cb79ef5430f0\core-47.1.47.jar is missing mods.toml file
+[26Dec.2023 23:00:50.911] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate C:\Users\owenp\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-java\47.1.47\9f5f057de5fea5106fca0df2b0faea12a85bc283\language-java-47.1.47.jar
+[26Dec.2023 23:00:50.911] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\owenp\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-java\47.1.47\9f5f057de5fea5106fca0df2b0faea12a85bc283\language-java-47.1.47.jar is missing mods.toml file
+[26Dec.2023 23:00:50.914] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.AbstractModProvider/SCAN]: Found META-INF/mods.toml mod of type null: [C:\Users\owenp\IdeaProjects\skybot-mod\build\resources\main, C:\Users\owenp\IdeaProjects\skybot-mod\build\classes\java\main]
+[26Dec.2023 23:00:50.914] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate C:\Users\owenp\IdeaProjects\skybot-mod\build\resources\main
+[26Dec.2023 23:00:50.918] [main/ERROR] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Locator net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@2c22a348 found an invalid mod file net.minecraftforge.fml.loading.moddiscovery.ModFileInfo@5ab9b447
+net.minecraftforge.fml.loading.moddiscovery.InvalidModFileException: Missing required field mandatory in dependency (main)
+	at net.minecraftforge.fml.loading.moddiscovery.ModInfo$ModVersion.lambda$new$1(ModInfo.java:215) ~[loader-47.1.47.jar:47.1]
+	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
+	at net.minecraftforge.fml.loading.moddiscovery.ModInfo$ModVersion.<init>(ModInfo.java:215) ~[loader-47.1.47.jar:47.1]
+	at net.minecraftforge.fml.loading.moddiscovery.ModInfo.lambda$new$7(ModInfo.java:98) ~[loader-47.1.47.jar:47.1]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[?:?]
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260) ~[?:?]
+	at java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616) ~[?:?]
+	at java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622) ~[?:?]
+	at java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627) ~[?:?]
+	at net.minecraftforge.fml.loading.moddiscovery.ModInfo.<init>(ModInfo.java:99) ~[loader-47.1.47.jar:47.1]
+	at net.minecraftforge.fml.loading.moddiscovery.ModFileInfo.lambda$new$2(ModFileInfo.java:85) ~[loader-47.1.47.jar:47.1]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[?:?]
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260) ~[?:?]
+	at java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616) ~[?:?]
+	at java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622) ~[?:?]
+	at java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627) ~[?:?]
+	at net.minecraftforge.fml.loading.moddiscovery.ModFileInfo.<init>(ModFileInfo.java:86) ~[loader-47.1.47.jar:47.1]
+	at net.minecraftforge.fml.loading.moddiscovery.ModFileParser.modsTomlParser(ModFileParser.java:47) ~[loader-47.1.47.jar:47.1]
+	at net.minecraftforge.fml.loading.moddiscovery.ModFileParser.readModList(ModFileParser.java:31) ~[loader-47.1.47.jar:47.1]
+	at net.minecraftforge.fml.loading.moddiscovery.ModFile.<init>(ModFile.java:79) ~[loader-47.1.47.jar:47.1]
+	at net.minecraftforge.fml.loading.moddiscovery.ModFile.<init>(ModFile.java:68) ~[loader-47.1.47.jar:47.1]
+	at net.minecraftforge.fml.loading.moddiscovery.AbstractModProvider.createMod(AbstractModProvider.java:52) ~[loader-47.1.47.jar:47.1]
+	at net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator.lambda$scanMods$6(MinecraftLocator.java:43) ~[loader-47.1.47.jar:47.1]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[?:?]
+	at java.util.AbstractList$RandomAccessSpliterator.forEachRemaining(AbstractList.java:720) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[?:?]
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310) ~[?:?]
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260) ~[?:?]
+	at java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616) ~[?:?]
+	at java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622) ~[?:?]
+	at java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627) ~[?:?]
+	at net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator.scanMods(MinecraftLocator.java:47) ~[loader-47.1.47.jar:47.1]
+	at net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer.discoverMods(ModDiscoverer.java:75) ~[loader-47.1.47.jar:47.1]
+	at net.minecraftforge.fml.loading.FMLLoader.beginModScan(FMLLoader.java:164) ~[loader-47.1.47.jar:47.1]
+	at net.minecraftforge.fml.loading.FMLServiceProvider.beginScanning(FMLServiceProvider.java:86) ~[loader-47.1.47.jar:47.1]
+	at cpw.mods.modlauncher.TransformationServiceDecorator.runScan(TransformationServiceDecorator.java:112) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.TransformationServicesHandler.lambda$runScanningTransformationServices$8(TransformationServicesHandler.java:100) ~[modlauncher-10.0.9.jar:?]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[?:?]
+	at java.util.HashMap$ValueSpliterator.forEachRemaining(HashMap.java:1779) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260) ~[?:?]
+	at java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616) ~[?:?]
+	at java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622) ~[?:?]
+	at java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627) ~[?:?]
+	at cpw.mods.modlauncher.TransformationServicesHandler.runScanningTransformationServices(TransformationServicesHandler.java:102) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.TransformationServicesHandler.initializeTransformationServices(TransformationServicesHandler.java:55) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:88) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]
+[26Dec.2023 23:00:50.932] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Trying locator net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@219f4597
+[26Dec.2023 23:00:50.949] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Locator net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@219f4597 found 2 candidates or errors
+[26Dec.2023 23:00:50.949] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Locator net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@219f4597 found 2 invalid mod files
+[26Dec.2023 23:00:50.950] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Locator net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@219f4597 found 0 valid mod files
+[26Dec.2023 23:00:50.950] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Trying locator net.minecraftforge.fml.loading.moddiscovery.BuiltinGameLibraryLocator@3af9aa66
+[26Dec.2023 23:00:50.953] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.AbstractModProvider/SCAN]: Found META-INF/MANIFEST.MF mod of type GAMELIBRARY: [C:\Users\owenp\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\events\47.1.47\d6bf266eabb0c7e353d3a2e47a47e6ba6392ab96\events-47.1.47.jar]
+[26Dec.2023 23:00:50.954] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Locator net.minecraftforge.fml.loading.moddiscovery.BuiltinGameLibraryLocator@3af9aa66 found 1 candidates or errors
+[26Dec.2023 23:00:50.954] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Locator net.minecraftforge.fml.loading.moddiscovery.BuiltinGameLibraryLocator@3af9aa66 found 1 valid mod files
+[26Dec.2023 23:00:50.954] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "events-47.1.47.jar" of type GAMELIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.BuiltinGameLibraryLocator@3af9aa66
+[26Dec.2023 23:00:50.959] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Successfully Loaded 1 mods. Attempting to load dependencies...
+[26Dec.2023 23:00:50.959] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Trying locator net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator@44f9779c
+[26Dec.2023 23:00:50.961] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.AbstractJarFileDependencyLocator/]: Failed to load resource META-INF\jarjar\metadata.json from events-47.1.47.jar, it does not contain dependency information.
+[26Dec.2023 23:00:50.978] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[26Dec.2023 23:00:50.979] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Loading mod file C:\Users\owenp\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\events\47.1.47\d6bf266eabb0c7e353d3a2e47a47e6ba6392ab96\events-47.1.47.jar with languages []
+[26Dec.2023 23:00:50.980] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModValidator/SCAN]: Found 1 mod files with 0 mods
+[26Dec.2023 23:00:50.980] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: End scan trigger - transformation service fml
+[26Dec.2023 23:00:50.982] [main/DEBUG] [net.minecraftforge.fml.loading.LanguageLoadingProvider/CORE]: Found 0 language providers
+[26Dec.2023 23:00:50.985] [main/DEBUG] [net.minecraftforge.fml.loading.ModSorter/]: Configured system mods: [minecraft]

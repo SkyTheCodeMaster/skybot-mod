@@ -32,6 +32,7 @@ public class WSServer extends WebSocketServer {
   
   public static void sendString(String data) {
     if (conn == null) {
+      LOGGER.info("Wanted to send: " + data + ", but connection isn't open...");
       return;
     }
     conn.send(data);
