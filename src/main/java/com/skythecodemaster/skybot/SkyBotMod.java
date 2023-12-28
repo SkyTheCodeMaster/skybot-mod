@@ -30,10 +30,10 @@ public class SkyBotMod {
     
     // Set host and port for server
     String host = "0.0.0.0";
-    int port = 20500;
+    int port = 40000;
     
     WSServer server = new WSServer(new InetSocketAddress(host,port));
     LOGGER.info("Running server on ws://" + host + ":" + port);
-    //server.run();
+    new Thread(server).start();
   }
 }

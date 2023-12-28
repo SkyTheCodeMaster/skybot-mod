@@ -18,26 +18,25 @@ import org.java_websocket.handshake.ClientHandshake;
 import org.java_websocket.server.WebSocketServer;
 
 public class WSServer extends WebSocketServer {
-  
+
   private static final Logger LOGGER = LogUtils.getLogger();
   private final ServerUtils sUtils = new ServerUtils();
-  
+
   public WSServer(InetSocketAddress address) {
     super(address);
-    
+
     LOGGER.info("WS Server instantiated...");
   }
-  
+
   private static WebSocket conn;
-  
+
   public static void sendString(String data) {
     if (conn == null) {
-      LOGGER.info("Wanted to send: " + data + ", but connection isn't open...");
       return;
     }
     conn.send(data);
   }
-  
+
   @Override
   public void onOpen(WebSocket conn, ClientHandshake handshake) {
     if (WSServer.conn != null) {
@@ -48,13 +47,13 @@ public class WSServer extends WebSocketServer {
     conn.send("hello"); // Later we will add information packets such as players, version, etc
     LOGGER.info("New client connected: " + conn.getRemoteSocketAddress());
   }
-  
+
   @Override
   public void onClose(WebSocket conn, int code, String reason, boolean remote) {
     WSServer.conn = null;
     LOGGER.info("Client disconnected: " + conn.getRemoteSocketAddress() + " with exit code " + code + " additional info: " + reason);
   }
-  
+
   @Override
   public void onMessage(WebSocket conn, String message) {
     LOGGER.info("Received message from " + conn.getRemoteSocketAddress() + ": " + message);
@@ -75,25 +74,25 @@ public class WSServer extends WebSocketServer {
     } else if (packet instanceof CommandPacket) {
       resp = sUtils.executeCommandPacket((CommandPacket) packet);
     }
-  
+
     // JSONify the response
     String json_resp = sUtils.jsonifyResponse(resp);
     // Send it down the websocket
     conn.send(json_resp);
   }
-  
+
   @Override
   public void onMessage(WebSocket conn, ByteBuffer message) {
     LOGGER.info("Received ByteBuffer from "	+ conn.getRemoteSocketAddress());
     // echo
     conn.send("Binary messages are not supported!");
   }
-  
+
   @Override
   public void onError(WebSocket conn, Exception ex) {
     LOGGER.info("An error occurred on connection " + conn.getRemoteSocketAddress()  + ":" + ex);
   }
-  
+
   @Override
   public void onStart() {
     LOGGER.info("WebSocket server started successfully");
