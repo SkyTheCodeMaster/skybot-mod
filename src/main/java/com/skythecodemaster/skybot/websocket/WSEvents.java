@@ -53,7 +53,7 @@ public class WSEvents {
     }
   }
 
-  @SubscribeEvent
+  /*@SubscribeEvent
   public void onAdvancementEvent(AdvancementEvent.AdvancementEarnEvent event) {
     String advancementName = event.getAdvancement().getDisplay().getTitle().getString();
     String username = event.getEntity().getName().getString();
@@ -73,7 +73,7 @@ public class WSEvents {
 
     String sPacket = gson.toJson(response);
     WSServer.sendString(sPacket);
-  }
+  }*/
 
   @SubscribeEvent
   public void onPlayerLoggedOutEvent(PlayerEvent.PlayerLoggedOutEvent event) {

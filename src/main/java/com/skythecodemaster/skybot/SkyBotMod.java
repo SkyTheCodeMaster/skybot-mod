@@ -21,6 +21,21 @@ public class SkyBotMod {
     MinecraftForge.EVENT_BUS.register(this);
     MinecraftForge.EVENT_BUS.register(new WSEvents()); // Register the WS events
   }
+
+  private void runWebserver(WSServer server, String host, int port) {
+    try {
+      new Thread(server).start();
+      LOGGER.info("Running server on ws://" + host + ":" + port);
+    } catch (Exception e) {
+      LOGGER.error("Caught exception in webserver; restarting in 10 seconds...");
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException ex) {
+            throw new RuntimeException(ex);
+        }
+        runWebserver(server, host, port);
+    }
+  }
   
   // This is called when the server world finishes loading, aka perfect time to set up chat integration
   @SubscribeEvent
@@ -31,9 +46,10 @@ public class SkyBotMod {
     // Set host and port for server
     String host = "0.0.0.0";
     int port = 40000;
-    
+
+
     WSServer server = new WSServer(new InetSocketAddress(host,port));
-    LOGGER.info("Running server on ws://" + host + ":" + port);
-    new Thread(server).start();
+    server.setReuseAddr(true);
+    runWebserver(server, host, port);
   }
 }
