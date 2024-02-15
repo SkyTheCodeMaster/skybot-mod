@@ -44,7 +44,7 @@ public class SkyBotMod {
     LOGGER.info("SkyBot Server activating...");
     
     // Set host and port for server
-    String host = "0.0.0.0";
+    String host = "127.0.0.1";
     int port = 40000;
 
 
